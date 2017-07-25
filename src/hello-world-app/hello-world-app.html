@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="hello-world-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class HelloWorldApp extends Polymer.Element {
+      static get is() { return 'hello-world-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'hello-world-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(HelloWorldApp.is, HelloWorldApp);
+  </script>
+</dom-module>
